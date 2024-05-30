@@ -1,0 +1,47 @@
+body{
+    background-color: lightblue;
+    color: maroon;
+    font-family: Arial;
+    margin: 0px;
+}
+a{
+    text-decoration: none;
+    color: yellowgreen;
+    transition: 1s 2s;
+}
+header{
+    background-color: bisque;
+    color: brown;
+    padding: 10px;
+    font-size: 16pt;
+}
+footer{
+    background-color: bisque;
+    color: brown;
+    padding: 10px;
+    font-size: 16pt;
+    font-style: italic;
+    text-align: right;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+main{
+    margin: 10px 20px 45px;
+}
+a:link{
+    color: purple;
+}
+a:visited{
+    color: green;
+}
+a:hover{
+    color: red;
+    text-decoration: underline;
+    transition: 0.3s;
+}
+a:active{
+    color: black;
+    opacity: 0.3;
+}

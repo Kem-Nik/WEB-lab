@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кем Никита Алексеевич. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function addNewBlock(){
+            let newBlock = document.createElement('div');
+            newBlock.style.backgroundColor = 'green';
+            newBlock.style.height = '40px';
+            document.querySelector('main').appendChild(newBlock);
+        }
+        function addNewBlocks(){
+            let main = document.querySelector('main');
+            let kol = document.querySelector('.kol');
+            let width = 130;
+            for (let i = 0; i<kol.value; i++){
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = 'green';
+                newBlock.style.height = '40px';
+                newBlock.style.width = `${width += 15}px`;
+                newBlock.innerHTML = `Блок № ${i+1}: 2*${i}<sup>2</sup> = ${2* i**2}`;
+                main.appendChild(newBlock);
+            }  
+        }
+        function add20_50(){
+            let main = document.querySelector('main');
+            for (let i = 20; i <=50; i+=2.5){
+                let newBlock = document.createElement('div');
+                newBlock.style.width = '25px';
+                newBlock.style.height = '25px';
+                newBlock.style.border = '1px solid';
+                newBlock.style.backgroundColor = 'yellow';
+                newBlock.style.color = 'brown';
+                newBlock.innerHTML = `${i}`;
+                main.appendChild(newBlock);
+            }
+        }
+        function add10_80(){
+            let main = document.querySelector('main');
+            for (let i = 10; i >=-80; i-=3){
+                let newBlock = document.createElement('div');
+                newBlock.style.width = '20px';
+                newBlock.style.height = '20px';
+                newBlock.style.borderRadius = '50%';
+                newBlock.style.backgroundColor = 'red';
+                newBlock.style.color = 'white';
+                newBlock.style.display ='inline-block';
+                newBlock.style.textAlign = 'center';
+                newBlock.innerHTML = `${i}`;
+                main.appendChild(newBlock);
+            }
+        }
+        function opac(){
+            let main = document.querySelector('main');
+            let opacity = 0;
+            for (let i = 0; i<10; i++){
+                let newBlock = document.createElement('div');
+                newBlock.style.height = '20px';
+                newBlock.style.width = '80px';
+                newBlock.style.backgroundColor = 'orange';
+                newBlock.style.color = 'white';
+                newBlock.style.opacity = `${opacity += 10}%`;
+                newBlock.innerHTML = `Блок ${i+1}`;
+                main.appendChild(newBlock);
+            }  
+        }
+        function color(){
+            let main = document.querySelector('main');
+            let col = document.querySelector('.col');
+            for (let i = col.value; i>0; i--){
+                let newBlock = document.createElement('div');
+                newBlock.style.height = '15px';
+                newBlock.style.width = '15px';
+                newBlock.style.color = 'white';
+                newBlock.style.borderRadius = '50%';
+                newBlock.style.display = 'inline-block';
+                newBlock.innerHTML = `${i}`;
+                if (i % 2 == 0){
+                    newBlock.style.backgroundColor = 'green';
+                }
+                else{
+                    newBlock.style.backgroundColor = 'red';
+                }
+                main.appendChild(newBlock);
+            }  
+        }
+    </script>
+    <style>
+        div{
+            border: 1px;
+            margin: 15px;
+            width: 300px;
+            padding: 15px;
+        }
+        input{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <header>НГТУ, ФБ, Лабораторная работа 7</header>
+
+    <main>
+        <input type="number" placeholder="Введите кол-во блоков" min="
+        0" class="kol">
+        <input type="number" placeholder="Введите кол-во кругов" min="0" class="col"><br><br>
+        <button onclick="addNewBlock()">Добавить блок</button>
+        <button onclick="addNewBlocks()">Добавить блоки</button>
+        <button onclick="add20_50()"> 20 => 50</button>
+        <button onclick="add10_80()"> 10 => -80</button>
+        <button onclick="opac()">Добавить полу-прозрачные блоки</button>
+        <button onclick="color()">Цветные круги</button><br>
+    </main>
+
+    <footer>
+        &copy; Никита Кем, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>

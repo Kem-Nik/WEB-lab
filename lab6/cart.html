@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кем Никита Алексеевич. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function OK(){
+            let bal = document.querySelector('.bal');
+            let сart1 = document.querySelector('.сart1');
+            let сart2 = document.querySelector('.сart2');
+            let сart3 = document.querySelector('.сart3');
+            let сart4 = document.querySelector('.сart4');
+            let сart5 = document.querySelector('.сart5');
+            let сart6 = document.querySelector('.сart6');
+            let сart7 = document.querySelector('.сart7');
+            let сart8 = document.querySelector('.сart8');
+
+            let c1 = parseInt(сart1.value);
+            let c2 = parseInt(сart2.value);
+            let c3 = parseInt(сart3.value);
+            let c4 = parseInt(сart4.value);
+            let c5 = parseInt(сart5.value);
+            let c6 = parseInt(сart6.value);
+            let c7 = parseInt(сart7.value);
+            let c8 = parseInt(сart8.value);
+            
+            let summa = c1*90 + c2*50 + c3*100 + c4*90 + c5*300 + c6*170 + c7*130 + c8*80 ;
+            if (summa > bal.value){
+                document.querySelector('.text').innerHTML = 'У вас недостаточно денег!';
+            }
+            else if (summa == 0){
+                document.querySelector('.text').innerHTML = 'Выберете товар';
+            }
+            document.querySelector('.sum').innerHTML = 'Итого: ' + summa + ' р';
+        }
+    </script>
+    <style>
+        table{
+            margin: 20px auto;
+        }
+        p{
+            margin: 20px ;
+            text-align: center;
+        }
+        button{
+            padding: 5px 10px;
+            margin-left: 460px;
+            cursor: pointer;
+        }
+        th, td {
+            border: 1px solid;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>НГТУ, ФБ, Лабораторная работа 6</header>
+
+    <main>
+
+        <p>
+            Мой баланс: <input type="number" value="100" class="bal">
+        </p>
+        
+        <table border="1">
+            <tr>
+                <th></th>
+                <th>Название</th>
+                <th>Цена</th>
+                <th>Количество</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Молоко</td>
+                <td>90 р</td>
+                <td><input type="number" min="0" value="1" class="сart1"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Хлеб белый</td>
+                <td>50 р</td>
+                <td><input type="number" min="0" value="0" class="сart2"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Масло сливочное, 200 гр</td>
+                <td>100 р</td>
+                <td><input type="number" min="0" value="1" class="сart3"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Сметана</td>
+                <td>90 р</td>
+                <td><input type="number" min="0" value="0" class="сart4"></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Колбаса</td>
+                <td>300 р</td>
+                <td><input type="number" min="0" value="1" class="сart5"></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Масло растительное</td>
+                <td>170 р</td>
+                <td><input type="number" min="0" value="0" class="сart6"></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Яйца, 10 шт</td>
+                <td>130 р</td>
+                <td><input type="number" min="0" value="1" class="сart7"></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Йогурт</td>
+                <td>80 р</td>
+                <td><input type="number" min="0" value="0" class="сart8"></td>
+            </tr>
+        </table>
+        <button onclick="OK()">OK</button>
+        <p class="sum"></p><br>
+        <p class="text"></p>
+
+    </main>
+
+    <footer>
+        &copy; Никита Кем, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
